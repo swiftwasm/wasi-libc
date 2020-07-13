@@ -3,7 +3,7 @@
 WASM_CC ?= clang
 WASM_NM ?= $(patsubst %clang,%llvm-nm,$(WASM_CC))
 WASM_AR ?= $(patsubst %clang,%llvm-ar,$(WASM_CC))
-WASM_CFLAGS ?= -O2 -DNDEBUG -DSWIFTWASM_ENABLE_PTHREAD
+WASM_CFLAGS ?= -O2 -DNDEBUG
 # The directory where we build the sysroot.
 SYSROOT ?= $(CURDIR)/sysroot
 # A directory to install to for "make install".

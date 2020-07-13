@@ -55,7 +55,7 @@ extern "C" {
 #define PTHREAD_PROCESS_SHARED 1
 
 
-// #if defined(__wasilibc_unmodified_upstream) || defined(_REENTRANT) || defined(SWIFTWASM_ENABLE_PTHREAD)
+// #if defined(__wasilibc_unmodified_upstream) || defined(_REENTRANT)
 #define PTHREAD_MUTEX_INITIALIZER {{{0}}}
 #define PTHREAD_RWLOCK_INITIALIZER {{{0}}}
 #define PTHREAD_COND_INITIALIZER {{{0}}}
