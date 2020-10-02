@@ -1,0 +1,16 @@
+name: Nightly distribution
+on:
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  nightly-distribution:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install LLVM
+        run: brew install llvm
+      - run: ./ci/distribute-latest-sysroot.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WASM_CC: /usr/local/opt/llvm/bin/clang
+        if: github.ref == 'refs/heads/swiftwasm'
